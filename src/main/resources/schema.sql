@@ -1,0 +1,1 @@
+CREATE TABLE salesdb AS SELECT * FROM CSVREAD('classpath:sales.csv');
