@@ -1,0 +1,22 @@
+services:
+    db:
+        image: 'postgres:15-alpine'
+        environment:
+            - 'POSTGRES_DB=bank_db'
+            - 'POSTGRES_PASSWORD=root'
+            - 'POSTGRES_USER=myuser'
+        ports:
+            - '5432'
+        # This keeps data alive if the container stops
+        volumes:
+            - postgres_data:/var/lib/postgresql/data
+    pgadmin:
+        container_name: pgadmin_28
+        image: dpage/pgadmin4:latest
+        environment:
+            PGADMIN_DEFAULT_EMAIL: admin@admin.com
+            PGADMIN_DEFAULT_PASSWORD: admin
+        ports:
+            - '5050:80'
+volumes:
+    postgres_data:

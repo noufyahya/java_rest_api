@@ -1,1 +1,1 @@
-CREATE TABLE salesdb AS SELECT * FROM CSVREAD('classpath:sales.csv');
+--CREATE TABLE salesdb AS SELECT * FROM CSVREAD('classpath:sales.csv');
